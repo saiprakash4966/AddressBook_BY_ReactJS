@@ -1,0 +1,49 @@
+{
+  "addressBook": [
+    {
+      "fullName": "Saiprakash",
+      "address": "  Kukatpally",
+      "city": "Hyderabad",
+      "state": "Telangana",
+      "phoneNumber": "9676113169",
+      "zipCode": "500039",
+      "id": 1
+    },
+    {
+      "fullName": "Manoj",
+      "address": "mysoor",
+      "city": "Bangalore",
+      "state": "Karnataka",
+      "phoneNumber": "9988776655",
+      "zipCode": "500987",
+      "id": 2
+    },
+    {
+      "fullName": "chandu",
+      "address": "wankhede",
+      "city": "Mumbai",
+      "state": "Maharashtra",
+      "phoneNumber": "9888877700",
+      "zipCode": "999999",
+      "id": 3
+    },
+    {
+      "fullName": "sravan",
+      "address": "chidambaram",
+      "city": "Chennai",
+      "state": "Tamil Nadu",
+      "phoneNumber": "88888888888",
+      "zipCode": "887766",
+      "id": 4
+    },
+    {
+      "fullName": "Raju",
+      "address": "Hyderabad",
+      "city": "Hyderabad",
+      "state": "Telangana",
+      "phoneNumber": "+919988776655",
+      "zipCode": "50500",
+      "id": 5
+    }
+  ]
+}

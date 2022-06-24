@@ -8,8 +8,8 @@ import services from "../services/services";
 
 const Contact = (props) => {
 
-    const remove = (id) => {
-        services.deleteContact(id).then((response) => {
+    const remove = (contactId) => {
+        services.deleteContact(contactId).then((response) => {
             console.log(response.data);
             window.location.reload();
         }).catch((error) => {
@@ -17,8 +17,8 @@ const Contact = (props) => {
         })
     }
 
-    const update = (id) => {
-        props.history.push(`form/${id}`);
+    const update = (contactId) => {
+        props.history.push(`form/${contactId}`);
     }
 
     return (
@@ -39,11 +39,11 @@ const Contact = (props) => {
                         <td>{element.address}</td>
                         <td>{element.city}</td>
                         <td>{element.state}</td>
-                        <td>{element.phoneNumber}</td>
-                        <td>{element.zipCode}</td>
+                        <td>{element.phone}</td>
+                        <td>{element.zip}</td>
                         <td>
-                            <img src={editLogo} alt="edit" onClick={() => update(element.id)}/>
-                            <img src={deleteLogo} alt="delete" onClick={() => remove(element.id)}/>
+                            <img src={editLogo} alt="edit" onClick={() => update(element.contactId)}/>
+                            <img src={deleteLogo} alt="delete" onClick={() => remove(element.contactId)}/>
                         </td>
                     </tr>
                 ))

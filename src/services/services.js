@@ -6,23 +6,23 @@ class Services {
     baseURL = config.baseURL;
 
     addContact = (data) => {
-        return axios.post(`${this.baseURL}addressBook`, data);
+        return axios.post(`${this.baseURL}/create`, data);
     }
 
     getContacts = () => {
-        return axios.get(`${this.baseURL}addressBook`);
+        return axios.get(`${this.baseURL}/`);
     }
 
     deleteContact = (id) => {
-        return axios.delete(`${this.baseURL}addressBook/${id}`);
+        return axios.delete(`${this.baseURL}/delete/${id}`);
     }
 
     getContact(id) {
-        return axios.get(`${this.baseURL}addressBook/${id}`);
+        return axios.get(`${this.baseURL}/get/${id}`);
     }
 
     updateContact(id,data) {
-        return axios.put(`${this.baseURL}addressBook/${id}`, data);
+        return axios.put(`${this.baseURL}/update/${id}`, data);
     }
 }
 export default new Services();

@@ -17,7 +17,7 @@ function Dashboard() {
 
     const getAllContacts = () => {
         services.getContacts().then((response) => {
-            const allContacts = response.data;
+            const allContacts = response.data.data;
             setContact(allContacts);
         }).catch((error) => {
             alert(error);

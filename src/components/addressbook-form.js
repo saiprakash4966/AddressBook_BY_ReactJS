@@ -42,21 +42,21 @@ const AddressBookForm = (props) => {
 
     const validateData = () => {
         let error = formError;
-        if (!formValue.fullName.match('^[A-Z]{1}[A-Za-z\\s]{2,}$')) {
+        if (!formValue.fullName.match('^[A-Z]{1}[a-zA-Z\\s]{2,}$')) {
             error.fullName = "Invalid NAME";
         }
         else {
             error.fullName = "";
         }
     
-        if (!formValue.address.match('^[a-zA-Z0-9#,&]{4,}$')){
+        if (!formValue.address.match('^[A-Za-z,.0-9\\s]{3,}$')){
             error.address = "Invalid ADDRESS";
         }
         else {
             error.address = "";
         }
     
-        if (!formValue.phoneNumber.match('^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$')) {
+        if (!formValue.phoneNumber.match('^(\\d{1,2}[-]{1})\\d{10}$')) {
             error.phoneNumber = "Invalid PHONE NUMBER"
         }
         else {
@@ -78,7 +78,7 @@ const AddressBookForm = (props) => {
     });
     const getContactByID = (id) => {
         services.getContact(id).then((response) => {
-            let obj = response.data;
+            let obj = response.data.data;
             setData(obj);
         }).catch((error) => {
             alert(error);
@@ -94,8 +94,8 @@ const AddressBookForm = (props) => {
             address: obj.address,
             city: obj.city,
             state: obj.state,
-            phoneNumber: obj.phoneNumber,
-            zipCode: obj.zipCode
+            phoneNumber: obj.phone,
+            zipCode: obj.zip
         })
     }
 
@@ -116,8 +116,8 @@ const AddressBookForm = (props) => {
             address: formValue.address,
             city: formValue.city,
             state: formValue.state,
-            phoneNumber: formValue.phoneNumber,
-            zipCode: formValue.zipCode,
+            phone: formValue.phoneNumber,
+            zip: formValue.zipCode,
         }
         if (formValue.isUpdate) {
             services.updateContact(params.id, object).then((response) => {

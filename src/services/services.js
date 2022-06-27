@@ -24,5 +24,13 @@ class Services {
     updateContact(id,data) {
         return axios.put(`${this.baseURL}/update/${id}`, data);
     }
+    sortByCity() {
+        return axios.get(`${this.baseURL}/sortbycity`);
+    }
+
+    sortByState() {
+        return axios.get(`${this.baseURL}/sortbystate`);
+    }
+
 }
 export default new Services();

@@ -23,6 +23,21 @@ function Dashboard() {
             alert(error);
         })
     }
+    function sortByCity() {
+        services.sortByCity().then((response) => {
+            console.log("click");
+            const contact = response.data.data;
+            setContact(contact);
+        })
+    }
+
+    function sortByState() {
+        services.sortByState().then((response) => {
+            const contact = response.data.data;
+            setContact(contact);
+        })
+    }
+
     return (
         <>
             <header className="header-content header">
@@ -45,34 +60,22 @@ function Dashboard() {
                     </Link>
                 </div>
                 <div className="table-main">
-                    {/* <table id="table-display" className="table">
+                    <table id="table-display" className="table">
                         <tr>
                             <th>Full Name</th>
                             <th>Address</th>
-                            <th>City</th>
-                            <th>State</th>
+                            <th onClick={() => sortByCity()}>City</th>
+                            <th onClick={() => sortByState()}>State</th>
                             <th>Zip Code</th>
                             <th>Phone Number</th>
                             <th>Actions</th>
                         </tr>
-                        <tr>
-                            <td>Saiprakash</td>
-                            <td>Kphb colony, Kukatpally</td>
-                            <td>Hyderabad</td>
-                            <td>Telangana</td>
-                            <td>500072</td>
-                            <td>91 9676113169</td>
-                            <td>
-                                <img src={deleteLogo} alt="delete" id="1"
-                                     onClick="remove(this)"/>
-                                    <img src={editLogo} alt="edit" id="1"
-                                         onClick="update(this)"/>
-                            </td>
-                        </tr>
-                    </table> */}
-                    <Contact contactArray={contactArray}/>
 
-                </div>
+
+                    <Contact contactArray={contactArray}/>
+                </table>
+
+            </div>
             </div>
         </>
     );

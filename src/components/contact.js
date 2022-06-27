@@ -22,16 +22,16 @@ const Contact = (props) => {
     }
 
     return (
-        <table id="table-display" className="table">
-            <tr key={-1}>
-                <th>Full Name</th>
-                <th>Address</th>
-                <th>City</th>
-                <th>State</th>
-                <th>Phone Number</th>
-                <th>Zip Code</th>
-                <th>Actions</th>
-            </tr>
+        <>
+            {/*<tr key={-1}>*/}
+            {/*    <th>Full Name</th>*/}
+            {/*    <th>Address</th>*/}
+            {/*    <th>City</th>*/}
+            {/*    <th>State</th>*/}
+            {/*    <th>Phone Number</th>*/}
+            {/*    <th>Zip Code</th>*/}
+            {/*    <th>Actions</th>*/}
+            {/*</tr>*/}
             {
                 props.contactArray && props.contactArray.map((element, index) => (
                     <tr key={index}>
@@ -48,7 +48,7 @@ const Contact = (props) => {
                     </tr>
                 ))
             }
-        </table>
+        </>
     );
 }
 export default withRouter(Contact);
